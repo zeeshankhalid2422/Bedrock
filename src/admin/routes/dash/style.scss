@@ -1,0 +1,125 @@
+.dashspecs .details {
+    .bg {
+        background: #191c1b;
+    padding: 15px;
+    border-radius: 15px;
+    }
+    .currency
+        {
+            font-size: 20px;
+            padding: 0;
+            margin: 0;
+        
+        }
+    .amount {
+        font-size: 36px;
+        font-weight: 600;
+    }
+    svg {
+        font-size: 48px;
+    }
+    .desc h4,p {
+        font-size: 12px;
+    }
+ }
+
+#coin-ponent div {
+    background: #191c1b;
+}
+
+tr, th {
+    background: #191c1b!important;
+    color: white!important;
+}
+
+.box-default {
+    background-color: #191c1b;
+    padding: 20px;
+}
+.box-header {
+    border-bottom: 2px solid #262729;
+    padding: 20px 0;
+    color: #C4C4C4;
+    font-size: 20px;
+}
+
+.balance {
+    background: #191c1b;
+    text-align: center;
+    border-radius: 10px;
+    padding: 15px;
+
+    p {
+        color: #5D69E9;
+        font-size: 18px;
+        margin: 0px;
+    }
+    h4 {
+        font-size: 30px;
+        margin: 5px 0;
+    }
+    span {
+        font-size: 18px;
+    }
+    a.send {
+        background: #5D69E9;
+        color: white;
+        padding: 8px 25px;
+        border-radius: 8px;
+        font-size: 11px;
+    }
+    a.receive {
+        background: #E26534;
+        color: white;
+        padding: 8px 25px;
+        border-radius: 8px;
+        font-size: 11px;
+    }
+    a.send1 {
+        background: #FFBC45;
+        color: white;
+        padding: 8px 25px;
+        border-radius: 8px;
+        font-size: 11px;
+    }
+    a.receive1 {
+        background: #34C38F;
+        color: white;
+        padding: 8px 25px;
+        border-radius: 8px;
+        font-size: 11px;
+    }
+}
+
+.quicktrans {
+    background: #191c1b;
+    border-radius: 10px;
+    padding: 15px;
+
+    .avatar span {
+        margin: 0px 15px;
+    }
+    .amount {
+        padding: 20px;
+        .col-md-6 {
+            border: 2px solid #4c4d4f;
+        }
+        .col-md-6 p {
+            margin: 5px 0px;
+        }
+        a {
+            background: linear-gradient(
+            180deg, #E26534 0%, #BF4459 100%);
+                color: white;
+                font-size: 16px;
+        }
+    }
+}
+  
+
+.sliderr i.anticon.anticon-line-chart.text-primary {
+    font-size: 30px;
+    position: relative;
+    left: 20px;
+    top: -5px;
+}

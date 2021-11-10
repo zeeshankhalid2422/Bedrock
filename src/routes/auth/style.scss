@@ -1,0 +1,54 @@
+tr, td {
+    background: #262729;
+    color: white;
+}
+
+tr, th {
+    background: #191c1b!important;
+    color: white!important;
+}
+
+tbody:hover, table:hover, tr:hover, td:hover {
+    background-color: #262729!important;
+}
+
+.authentication .ant-upload.ant-upload-drag {
+    background: #191c1b;
+    border: none;
+    height: 250px;
+    width: 90%;
+}
+
+.authentication .ant-upload.ant-upload-drag .ant-upload-drag-container {
+    border: 1px solid white;
+    border-style: dashed;
+    border-radius: 8px;
+}
+
+.authentication .ant-upload.ant-upload-drag .ant-upload-btn {
+    padding: 40px;
+}
+
+.authentication i {
+    font-size: 45px!important;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.authentication a {
+    background: linear-gradient(
+        180deg, #E26534 0%, #BF4459 100%);
+    border-radius: 9px;
+    color: white;
+    padding: 15px 100px;
+    font-size: 16px;
+}
+
+input.ant-input.ant-input-lg {
+    background: #191C1B;
+    border: none;
+    height: 48px;
+    color: white;
+    padding: 0px 20px;
+    width: 90%;
+}

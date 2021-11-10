@@ -1,0 +1,25 @@
+tr, td {
+    background: #262729;
+    color: white;
+}
+
+tr, th {
+    background: #191c1b!important;
+    color: white!important;
+}
+
+tr:hover td {
+    background: #191c1b!important;
+    color: white!important;
+}
+
+tbody:hover, table:hover, tr:hover, td:hover {
+    background-color: #262729!important;
+}
+
+.status a {
+    background: #2e9cff;
+    color: white;
+    padding: 4px 15px;
+    border-radius: 20px;
+}

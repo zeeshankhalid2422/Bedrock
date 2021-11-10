@@ -1,0 +1,33 @@
+@import "../../styles/variables";
+
+// with Form Card component
+.form-card-page {
+  height: 100vh;
+  overflow-y: scroll;
+  border-radius: 0;
+  background-color: #191c1b;
+  color: white;
+}
+
+// with Cover component
+.cover-page {
+  height: 100vh;
+  padding: 0;
+  overflow-y: scroll;
+
+  .cover-form-container {
+    height: 100vh;
+    max-height: 100vh;
+    padding: 3rem 0;
+    overflow-y: scroll;
+    @media screen and (min-width: map-get($grid-breakpoints, md)) {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+}
+
+.form-v1-container .ant-form-item-label label {
+  color: black;
+}

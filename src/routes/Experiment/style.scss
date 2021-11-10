@@ -1,0 +1,17 @@
+tr, td {
+    background: #262729;
+    color: white;
+}
+tr:hover td {
+    background: #191c1b!important;
+    color: white!important;
+}
+
+tr, th {
+    background: #191c1b!important;
+    color: white!important;
+}
+
+tbody:hover, table:hover, tr:hover, td:hover {
+    background-color: #262729!important;
+}
