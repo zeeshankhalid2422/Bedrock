@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Button, Avatar } from 'antd';
 import { withRouter } from 'react-router-dom';
 import APPCONFIG from 'constants/appConfig';
 import DEMO from 'constants/demoData';
 import { useMoralis } from "react-moralis";
+
 
 const FormItem = Form.Item;
 
@@ -23,14 +24,17 @@ const NormalLoginForm=(props)=> {
     props.form.validateFields((err, values) => {
       if (!err) {
         // console.log('Received values of form: ', values);
-        props.history.push(DEMO.home2);
+        // props.history.push(DEMO.home2);
+        setTimeout(() => {
+          props.history.push(DEMO.home2);
+        }, 15000);
       }
     });
   };
 
   const LogoutButton = () => {
     const { logout, isAuthenticating } = useMoralis();
-  
+
     return (
       <Button
         display={"block"}
@@ -80,7 +84,7 @@ const NormalLoginForm=(props)=> {
   const { getFieldDecorator } = props.form;
   return (
     <section className="form-v1-container">
-      <h2 style={{fontWeight: '600', marginBottom: '3.0rem'}}>Bedrock</h2>
+      <h2 style={{fontWeight: '600', marginBottom: '3.0rem'}}><Avatar src="assets/logo.png" size="small" /></h2>
       <p className="lead">Welcome, Connect your {APPCONFIG.brand} Wallet</p>
       <Form onSubmit={handleSubmit} className="form-v1">
         {/* <FormItem>
@@ -118,15 +122,17 @@ const NormalLoginForm=(props)=> {
             style={{fontSize: '1.0rem'}}
             type="primary"
             htmlType="submit"
-            onClick={() => authenticate({ signingMessage: "Hello youtube" })}
-            
+            onClick={() => authenticate({ signingMessage: "Authenticate" })}
             className="btn-cta btn-block"
+            id="submit"
           >
             Connect wallet
           </Button>
         </FormItem>
 
-        <LogoutButton/>
+        {/* <LogoutButton /> */}
+
+        {/* <LogoutButton/> */}
       </Form>
     </section>
   );

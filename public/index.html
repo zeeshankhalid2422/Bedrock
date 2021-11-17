@@ -40,6 +40,9 @@
       coin-ponent div {
         background-color: #191C1B;
       }
+      .cg-price-chart-link{
+        display: none !important;
+      }
     </style>
   </head>
   <body>
@@ -71,8 +74,21 @@
 
       }
     </script>
-    
+
+    <script>
+      if (location.reload) {
+        const $root = document.querySelector('coingecko-coin-price-chart-widget');
+
+        $root.shadowRoot.querySelector("style").innerText = ".cg-right-panel.cg-my-1 {display: none}";
+      }
+      
+    </script>
+
+    <script src="https://widgets.coingecko.com/coingecko-coin-price-chart-widget.js"></script>
+
     <script src="https://widget.nomics.com/embed.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/coinponent/coinponent@1.2.6/dist/coinponent.js"></script>
+
+
   </body>
 </html>

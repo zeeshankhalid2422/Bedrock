@@ -9,6 +9,9 @@ import { toggleCollapsedNav, toggleOffCanvasNav } from 'actions/settingsActions'
 import AppMenu from './Menu';
 const { Sider } = Layout;
 
+
+
+
 class AppSidenav extends React.Component {
   render() {
     const { collapsedNav, offCanvasNav, sidenavWidth, colorOption } = this.props;
@@ -44,12 +47,9 @@ class AppSidenav extends React.Component {
           <AppMenu />
         </div>
 
-        {/* <div className="sidenav-footer">
-          <a target="_blank" href={DEMO.productLink} rel="noopener noreferrer">
-            <Icon type="question-circle" />
-            <span className="nav-text"><span>Help</span> & <span>Support</span></span>
-          </a>
-        </div> */}
+        <div className="sidenav-footer" style={{position: 'relative', zIndex: "11", top: '-350px'}}>
+          <coingecko-coin-price-chart-widget  coin-id="bedrock" currency="usd" height="1" locale="en" color="#ffffff" background-color="#191c1b" sx={{background: "red"}}></coingecko-coin-price-chart-widget>
+        </div>
       </Sider>
     );
   }
