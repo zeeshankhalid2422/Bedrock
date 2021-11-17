@@ -70,6 +70,10 @@ class NormalLoginForm extends React.Component {
       });
   };
 
+  paymentHandler = e => {
+    alert('Button clicked')
+  }
+
 
 
   render() {
@@ -216,6 +220,12 @@ class NormalLoginForm extends React.Component {
                   <FormItem className="text-center m-4">
                     <Button htmlType="submit" className="btn-cta submit-btn">
                       Add Experiment
+                    </Button>
+                  </FormItem>
+
+                  <FormItem className="text-center m-4">
+                    <Button htmlType="submit" onClick={this.paymentHandler} className="btn-cta submit-btn">
+                      Send payment
                     </Button>
                   </FormItem>
                 </div>
