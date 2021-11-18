@@ -3,7 +3,7 @@ import { Form, Icon, Input, Button, Avatar } from 'antd';
 import { withRouter } from 'react-router-dom';
 import APPCONFIG from 'constants/appConfig';
 import DEMO from 'constants/demoData';
-import { useMoralis } from "react-moralis";
+import { useMoralis, useWeb3Transfer } from "react-moralis";
 
 
 const FormItem = Form.Item;
@@ -14,7 +14,6 @@ const NormalLoginForm=(props)=> {
     authenticate,
     isWeb3Enabled,
     isAuthenticated,
-    user,
     enableWeb3,
     Moralis,
   } = useMoralis();
@@ -31,6 +30,44 @@ const NormalLoginForm=(props)=> {
       }
     });
   };
+
+  // const paymentHandler = e => {
+    
+  //   alert('Button clicked');
+  //   const {fetch, error, isFetching} = useWeb3Transfer({
+  //     amount: Moralis.Units.Token(20, 18),
+  //     receiver: "0xD524EEd491e9d900e57Ab796E376F06dAe3367E4",
+  //     type: "erc20",
+  //     contractAddress: "0xc3387e4285e9f80a7cfdf02b4ac6cdf2476a528a",
+  //   });
+    
+  // }
+
+  const TransferWeth = () => {
+    const {fetch, error, isFetching} = useWeb3Transfer({
+      amount: Moralis.Units.Token(20, 18),
+      receiver: "0x570518Df163057c134C8d7aef02E4D70b6E5A6Fa",
+      type: "erc20",
+      contractAddress: "0xc3387e4285e9f80a7cfdf02b4ac6cdf2476a528a",
+    });
+  
+    return (
+      
+      <FormItem>
+      <Button
+        style={{fontSize: '1.0rem'}}
+        type="primary"
+        htmlType="submit"
+        onClick={() => fetch()}
+        className="btn-cta btn-block"
+        id="submit"
+        disabled={isFetching}
+      >
+        Transfer
+      </Button>
+    </FormItem>)
+    
+  }
 
   const LogoutButton = () => {
     const { logout, isAuthenticating } = useMoralis();
@@ -129,11 +166,14 @@ const NormalLoginForm=(props)=> {
             Connect wallet
           </Button>
         </FormItem>
+        
 
-        {/* <LogoutButton /> */}
+        {/* {/ <LogoutButton /> /}
 
-        {/* <LogoutButton/> */}
+        {/ <LogoutButton/> /} */}
       </Form>
+
+      {/* <TransferWeth/> */}
     </section>
   );
 }

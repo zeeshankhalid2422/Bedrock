@@ -7,6 +7,7 @@ import QueueAnim from 'rc-queue-anim';
 import FormModal1 from './FormModal';
 import $ from 'jquery';
 import busd from './busd.png'
+import Transfer from 'routes/form/routes/forms/components/Transfer'
 
 import axios from 'axios';
 const FormItem = Form.Item;
@@ -211,6 +212,7 @@ class NormalLoginForm extends React.Component {
                         <option value="2 months">2 month</option>
                         <option value="3 months">3 month</option>
                         <option value="6 months">6 month</option>
+                        <option value="6 months">12 month</option>
                       </Select>
                     </div>
                     <div className="article col-md-12">
@@ -223,11 +225,7 @@ class NormalLoginForm extends React.Component {
                     </Button>
                   </FormItem>
 
-                  <FormItem className="text-center m-4">
-                    <Button htmlType="submit" onClick={this.paymentHandler} className="btn-cta submit-btn">
-                      Send payment
-                    </Button>
-                  </FormItem>
+                  
                 </div>
                 {/* <div className="offset-md-1" /> */}
                 <div className="col-md-6">
@@ -266,6 +264,13 @@ class NormalLoginForm extends React.Component {
               </div>
             </div>
           </Form>
+          <div className="row">
+            <div className="col-md-6 text-center">
+                <h4>Transfer Rock tokens</h4>
+                <Transfer />
+            </div>
+          </div>
+          
 
         </QueueAnim>
       </section>
