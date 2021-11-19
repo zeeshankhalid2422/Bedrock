@@ -212,7 +212,7 @@ class NormalLoginForm extends React.Component {
                         <option value="2 months">2 month</option>
                         <option value="3 months">3 month</option>
                         <option value="6 months">6 month</option>
-                        <option value="6 months">12 month</option>
+                        <option value="12 months">12 month</option>
                       </Select>
                     </div>
                     <div className="article col-md-12">

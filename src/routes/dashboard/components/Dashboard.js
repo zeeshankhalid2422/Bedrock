@@ -1,6 +1,6 @@
 import React from 'react';
 import QueueAnim from 'rc-queue-anim';
-import { Icon, Table, Avatar  } from 'antd';
+import { Icon, Table, Avatar, Progress  } from 'antd';
 import 'echarts/theme/macarons';
 import CHARTCONFIG from 'constants/chartConfig';
 import ReactEcharts from 'echarts-for-react';
@@ -259,6 +259,23 @@ const dash = () => (
           </div>
           <div className="row">
             <div className="col-md-12">
+              <div style={{background: "#191c1b", padding: "25px", borderRadius: "10px"}}>
+                <h4>Funding from BackersCamp</h4>
+                <hr style={{background: "#ffffff33"}} />
+
+                <div className="row">
+                  <div className="col-md-6">
+                      Hello
+                  </div>
+                  <div className="col-md-6">
+                      Hello
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row mt-3">
+            <div className="col-md-12">
               <article className="article">
                 <h4 className="article-title">Transaction History</h4>
                 <Table
@@ -273,6 +290,43 @@ const dash = () => (
         </div>
 
         <div className="col-md-4">
+          {/* <div className="row mb-4 text-center" style={{ display: "block" }}>
+            <div>
+              <img style={{ maxWidth: "350px", width: "100%" }} src="assets/sneakxenergy.png" alt="sneak" />
+            </div>
+          </div> */}
+
+
+          <div className="card mb-4" style={{background: "#191c1b"}}>
+            <img style={{ maxHeight: "300px", width: "100%" }} src="assets/sneakxenergy.png" alt="sneak" />
+            <div className ="card-body">
+              <h4>Sneak X Energy</h4>
+              <p> The future of Energy Drinks </p>
+              <Progress percent={80} />
+              {/* <Progress percent={70} status="exception" /> */}
+              <div className="row prodetail mt-3">
+                <div className="col-md-4">
+                  <h5>PLEDGED</h5>
+                  <p>$ 268,742</p>
+                </div>
+                <div className="col-md-4">
+                  <h5>FUNDED</h5>
+                  <p>80%</p>
+                </div>
+                <div className="col-md-4">
+                  <h5>BACKERS</h5>
+                  <p>100,200</p>
+                </div>
+              </div>
+              <div className="row mt-3">
+                <div className="col-md-12 text-center">
+                  <a className="text-white" href="">Visit Project <Icon type="arrow-right" style={{ fontSize: 16, color: 'white' }} /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
           <div className="row mb-4">
             <div className="col-12 grid-margin">
               <h4>Currency Converter Calculator</h4>
@@ -336,11 +390,11 @@ const dash = () => (
               <div className="quicktrans">
                 <h4>Quick Transfer</h4>
                 <div className="col-md-12 avatar">
-                  <Avatar size={64}  />
-                  <Avatar size={64}  />
-                  <Avatar size={64}  />
-                  <Avatar size={64}  />
-                  <Avatar size={64}  />
+                  <Avatar size={64} />
+                  <Avatar size={64} />
+                  <Avatar size={64} />
+                  <Avatar size={64} />
+                  <Avatar size={64} />
                 </div>
                 <div className="row mt-3 amount">
                   <div className="col-md-6 text-center">
@@ -357,76 +411,76 @@ const dash = () => (
         </div>
       </div>
 
-      <div className="col-md-12 bg-dark p-4 mt-4 sliderr" style={{borderRadius: '10px'}}>
+      <div className="col-md-12 bg-dark p-4 mt-4 sliderr" style={{ borderRadius: '10px' }}>
         <Slider {...settings}>
           <div>
-            <div className="row" style={{borderRight: "2px solid white", width: "80%"}}>
-              <div className="col-md-12" style={{display: 'flex', alignItems: 'center'}}>
-                <h3 style={{fontSize: 14, margin: '0 20px 0 0'}}>ETH/BTC</h3>
-                <p style={{fontsize: 10, color: '#30AC12', margin: '0'}}>+1.58</p>
+            <div className="row" style={{ borderRight: "2px solid white", width: "80%" }}>
+              <div className="col-md-12" style={{ display: 'flex', alignItems: 'center' }}>
+                <h3 style={{ fontSize: 14, margin: '0 20px 0 0' }}>ETH/BTC</h3>
+                <p style={{ fontsize: 10, color: '#30AC12', margin: '0' }}>+1.58</p>
               </div>
-              <div className="col-md-12 mt-3" style={{display: 'flex', alignItems: 'center'}}>
-                <h3 style={{fontSize: 14, margin: '0 20px 0 0'}}>$159.73</h3>
+              <div className="col-md-12 mt-3" style={{ display: 'flex', alignItems: 'center' }}>
+                <h3 style={{ fontSize: 14, margin: '0 20px 0 0' }}>$159.73</h3>
                 <Icon type="line-chart" className="text-primary" />
               </div>
             </div>
           </div>
           <div>
-            <div className="row" style={{borderRight: "2px solid white", width: "80%"}}>
-              <div className="col-md-12" style={{display: 'flex', alignItems: 'center'}}>
-                <h3 style={{fontSize: 14, margin: '0 20px 0 0'}}>ETH/BTC</h3>
-                <p style={{fontsize: 10, color: '#30AC12', margin: '0'}}>+1.58</p>
+            <div className="row" style={{ borderRight: "2px solid white", width: "80%" }}>
+              <div className="col-md-12" style={{ display: 'flex', alignItems: 'center' }}>
+                <h3 style={{ fontSize: 14, margin: '0 20px 0 0' }}>ETH/BTC</h3>
+                <p style={{ fontsize: 10, color: '#30AC12', margin: '0' }}>+1.58</p>
               </div>
-              <div className="col-md-12 mt-3" style={{display: 'flex', alignItems: 'center'}}>
-                <h3 style={{fontSize: 14, margin: '0 20px 0 0'}}>$159.73</h3>
+              <div className="col-md-12 mt-3" style={{ display: 'flex', alignItems: 'center' }}>
+                <h3 style={{ fontSize: 14, margin: '0 20px 0 0' }}>$159.73</h3>
                 <Icon type="line-chart" className="text-primary" />
               </div>
             </div>
           </div>
           <div>
-            <div className="row" style={{borderRight: "2px solid white", width: "80%"}}>
-              <div className="col-md-12" style={{display: 'flex', alignItems: 'center'}}>
-                <h3 style={{fontSize: 14, margin: '0 20px 0 0'}}>ETH/BTC</h3>
-                <p style={{fontsize: 10, color: '#30AC12', margin: '0'}}>+1.58</p>
+            <div className="row" style={{ borderRight: "2px solid white", width: "80%" }}>
+              <div className="col-md-12" style={{ display: 'flex', alignItems: 'center' }}>
+                <h3 style={{ fontSize: 14, margin: '0 20px 0 0' }}>ETH/BTC</h3>
+                <p style={{ fontsize: 10, color: '#30AC12', margin: '0' }}>+1.58</p>
               </div>
-              <div className="col-md-12 mt-3" style={{display: 'flex', alignItems: 'center'}}>
-                <h3 style={{fontSize: 14, margin: '0 20px 0 0'}}>$159.73</h3>
+              <div className="col-md-12 mt-3" style={{ display: 'flex', alignItems: 'center' }}>
+                <h3 style={{ fontSize: 14, margin: '0 20px 0 0' }}>$159.73</h3>
                 <Icon type="line-chart" className="text-primary" />
               </div>
             </div>
           </div>
           <div>
-            <div className="row" style={{borderRight: "2px solid white", width: "80%"}}>
-              <div className="col-md-12" style={{display: 'flex', alignItems: 'center'}}>
-                <h3 style={{fontSize: 14, margin: '0 20px 0 0'}}>ETH/BTC</h3>
-                <p style={{fontsize: 10, color: '#30AC12', margin: '0'}}>+1.58</p>
+            <div className="row" style={{ borderRight: "2px solid white", width: "80%" }}>
+              <div className="col-md-12" style={{ display: 'flex', alignItems: 'center' }}>
+                <h3 style={{ fontSize: 14, margin: '0 20px 0 0' }}>ETH/BTC</h3>
+                <p style={{ fontsize: 10, color: '#30AC12', margin: '0' }}>+1.58</p>
               </div>
-              <div className="col-md-12 mt-3" style={{display: 'flex', alignItems: 'center'}}>
-                <h3 style={{fontSize: 14, margin: '0 20px 0 0'}}>$159.73</h3>
+              <div className="col-md-12 mt-3" style={{ display: 'flex', alignItems: 'center' }}>
+                <h3 style={{ fontSize: 14, margin: '0 20px 0 0' }}>$159.73</h3>
                 <Icon type="line-chart" className="text-primary" />
               </div>
             </div>
           </div>
           <div>
-            <div className="row" style={{borderRight: "2px solid white", width: "80%"}}>
-              <div className="col-md-12" style={{display: 'flex', alignItems: 'center'}}>
-                <h3 style={{fontSize: 14, margin: '0 20px 0 0'}}>ETH/BTC</h3>
-                <p style={{fontsize: 10, color: '#30AC12', margin: '0'}}>+1.58</p>
+            <div className="row" style={{ borderRight: "2px solid white", width: "80%" }}>
+              <div className="col-md-12" style={{ display: 'flex', alignItems: 'center' }}>
+                <h3 style={{ fontSize: 14, margin: '0 20px 0 0' }}>ETH/BTC</h3>
+                <p style={{ fontsize: 10, color: '#30AC12', margin: '0' }}>+1.58</p>
               </div>
-              <div className="col-md-12 mt-3" style={{display: 'flex', alignItems: 'center'}}>
-                <h3 style={{fontSize: 14, margin: '0 20px 0 0'}}>$159.73</h3>
+              <div className="col-md-12 mt-3" style={{ display: 'flex', alignItems: 'center' }}>
+                <h3 style={{ fontSize: 14, margin: '0 20px 0 0' }}>$159.73</h3>
                 <Icon type="line-chart" className="text-primary" />
               </div>
             </div>
           </div>
           <div>
-            <div className="row" style={{borderRight: "2px solid white", width: "80%"}}>
-              <div className="col-md-12" style={{display: 'flex', alignItems: 'center'}}>
-                <h3 style={{fontSize: 14, margin: '0 20px 0 0'}}>ETH/BTC</h3>
-                <p style={{fontsize: 10, color: '#30AC12', margin: '0'}}>+1.58</p>
+            <div className="row" style={{ borderRight: "2px solid white", width: "80%" }}>
+              <div className="col-md-12" style={{ display: 'flex', alignItems: 'center' }}>
+                <h3 style={{ fontSize: 14, margin: '0 20px 0 0' }}>ETH/BTC</h3>
+                <p style={{ fontsize: 10, color: '#30AC12', margin: '0' }}>+1.58</p>
               </div>
-              <div className="col-md-12 mt-3" style={{display: 'flex', alignItems: 'center'}}>
-                <h3 style={{fontSize: 14, margin: '0 20px 0 0'}}>$159.73</h3>
+              <div className="col-md-12 mt-3" style={{ display: 'flex', alignItems: 'center' }}>
+                <h3 style={{ fontSize: 14, margin: '0 20px 0 0' }}>$159.73</h3>
                 <Icon type="line-chart" className="text-primary" />
               </div>
             </div>

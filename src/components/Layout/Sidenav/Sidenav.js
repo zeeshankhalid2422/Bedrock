@@ -47,7 +47,7 @@ class AppSidenav extends React.Component {
           <AppMenu />
         </div>
 
-        <div className="sidenav-footer" style={{position: 'relative', zIndex: "11", top: '-350px'}}>
+        <div className="sidenav-footer" style={{position: 'fixed', zIndex: "11", top: '600px', left: "-50px" }}>
           <coingecko-coin-price-chart-widget  coin-id="bedrock" currency="usd" height="1" locale="en" color="#ffffff" background-color="#191c1b" sx={{background: "red"}}></coingecko-coin-price-chart-widget>
         </div>
       </Sider>

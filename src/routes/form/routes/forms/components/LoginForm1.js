@@ -69,6 +69,18 @@ const NormalLoginForm=(props)=> {
     
   }
 
+  const TokenPrice = async() => {
+   //Get token price on PancakeSwap v2 BSC
+    const options = {
+      address: "0xc3387e4285e9f80a7cfdf02b4ac6cdf2476a528a",
+      chain: "bsc",
+      exchange: "PancakeSwapv2"
+    };
+    const price = await Moralis.Web3API.token.getTokenPrice(options);
+    console.log(price);
+  
+  }
+
   const LogoutButton = () => {
     const { logout, isAuthenticating } = useMoralis();
 
@@ -172,8 +184,19 @@ const NormalLoginForm=(props)=> {
 
         {/ <LogoutButton/> /} */}
       </Form>
-
-      {/* <TransferWeth/> */}
+      <FormItem>
+      <Button
+        style={{fontSize: '1.0rem'}}
+        type="primary"
+        htmlType="submit"
+        onClick={() => TokenPrice()}
+        className="btn-cta btn-block"
+        id="submit"
+      >
+        Price
+      </Button>
+    </FormItem>
+      {/* {/ <TransferWeth/> /} */}
     </section>
   );
 }
