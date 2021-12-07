@@ -14,14 +14,14 @@ class AppMenu extends React.Component {
 
   // list for AccordionNav
   rootMenuItemKeys= [ // without submenu
-    '/app/dashboard'
+    '/admin/dash'
   ]
   rootSubmenuKeys = [
     '/app/card'
   ];
 
   state = {
-    openKeys: ['/app/dashboard'],
+    openKeys: ['/admin/dash'],
   };
 
   onOpenChange = (openKeys) => {
@@ -118,7 +118,7 @@ class AppMenu extends React.Component {
       >
         <Menu.Item key="/admin/dash">
           <a href="#/admin/dash">
-            <Icon type="dash" />
+            <Icon type="dashboard" />
             <span className="nav-text">Dashboard</span>
           </a>
         </Menu.Item>

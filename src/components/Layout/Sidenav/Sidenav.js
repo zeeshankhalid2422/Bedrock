@@ -5,9 +5,11 @@ import { Layout, Icon } from 'antd';
 import Logo from 'components/Logo';
 import APPCONFIG from 'constants/appConfig';
 import DEMO from 'constants/demoData';
+import Price from 'routes/form/routes/forms/components/Price'
 import { toggleCollapsedNav, toggleOffCanvasNav } from 'actions/settingsActions';
 import AppMenu from './Menu';
 const { Sider } = Layout;
+
 
 
 
@@ -39,16 +41,21 @@ class AppSidenav extends React.Component {
             'bg-warning': ['15', '25', '35'].indexOf(colorOption) >= 0,
             'bg-danger': ['16', '26', '36'].indexOf(colorOption) >= 0 })}
         >
-          <Logo />
-          <a href="#/" className="brand">{APPCONFIG.brand}</a>
+          {/* <Logo /> */}
+          {/* <a href="#/" className="brand">{APPCONFIG.brand}</a> */}
+          <a href="#/" className="brand"><img width="150" src="/logo_with_bedrock.png" alt="logo" /></a>
         </section>
 
         <div className="sidenav-content" ref="sidenavContent">
           <AppMenu />
         </div>
 
-        <div className="sidenav-footer" style={{position: 'fixed', zIndex: "11", top: '600px', left: "-50px" }}>
-          <coingecko-coin-price-chart-widget  coin-id="bedrock" currency="usd" height="1" locale="en" color="#ffffff" background-color="#191c1b" sx={{background: "red"}}></coingecko-coin-price-chart-widget>
+        <div className="sidenav-footer" style={{position: 'fixed', zIndex: "11", top: '600px', left: "30px" }}>
+          <h4>Bedrock/USD</h4>
+          <div style={{display: 'flex'}}>
+            <img width="30" src="/bedrock-mini.png" alt="logo" style={{marginRight: '15px'}}/>
+            <Price />
+          </div>
         </div>
       </Sider>
     );

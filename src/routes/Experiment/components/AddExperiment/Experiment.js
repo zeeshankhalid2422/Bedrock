@@ -8,6 +8,7 @@ import FormModal1 from './FormModal';
 import $ from 'jquery';
 import busd from './busd.png'
 import Transfer from 'routes/form/routes/forms/components/Transfer'
+import Price from 'routes/form/routes/forms/components/Price'
 
 import axios from 'axios';
 const FormItem = Form.Item;
@@ -26,22 +27,30 @@ class NormalLoginForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      fundingGoal:0,
+      initialFundToken:0
+    };
   }
 
-  update = e => {
-    $("#field2").val($('#field1').val());
-  }
+  // update = e => {
+  //   $("#field2").val($('#field1').val());
+  // }
 
   changeHandler = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({ [e.target.name]: parseInt(e.target.value) });
   };
 
   handleLoginKeyUp = e => {
+    const bedRockPrice = localStorage.getItem("bedRockPrice") === undefined ? 1 : localStorage.getItem("bedRockPrice")
 
-    var x = document.getElementById("funding-goal").value;
-    console.log(x)
-    document.getElementById("fund-token").value = x / 2;
+
+    let initialFundToken = this.state.fundingGoal / 2 / parseFloat(bedRockPrice)
+    this.setState({initialFundToken})
+
+    // var x = document.getElementById("funding-goal").value;
+    // console.log(x)
+    // document.getElementById("fund-token").value = x / 2;
   }
 
   submitHandler = e => {
@@ -62,7 +71,7 @@ class NormalLoginForm extends React.Component {
     // FormData.append('file',this.state.file)
 
     axios
-      .post('https://617933d3aa7f34001740486d.mockapi.io/crud', this.state)
+      .post('http://localhost:3000/api/v1/experiments/', this.state)
       .then(response => {
         console.log(response);
       })
@@ -71,19 +80,21 @@ class NormalLoginForm extends React.Component {
       });
   };
 
-  paymentHandler = e => {
-    alert('Button clicked')
-  }
+  // paymentHandler = e => {
+  //   alert('Button clicked')
+  // }
 
 
 
   render() {
+    // console.log(this.state.initialFundToken)
     const { getFieldDecorator } = this.props.form;
 
     const { expname, expdesc, expgoal, expdate, markup, files, fund, bwebsite } = this.state;
 
     return (
       <section className="form-v1-container">
+        
         <QueueAnim type="bottom" className="ui-animate">
 
           <Form onSubmit={this.submitHandler} className="form-v1">
@@ -104,7 +115,7 @@ class NormalLoginForm extends React.Component {
                       <Input.TextArea
                         name="expdesc"
                         size="large"
-                        style={{ height: 184 }}
+                        style={{ height: 216 }}
                         onChange={this.changeHandler}
                       />
                     )}
@@ -119,8 +130,9 @@ class NormalLoginForm extends React.Component {
                           value: { expgoal },
                         })(
                           <Input
-                            name="expgoal"
+                            name="fundingGoal"
                             onKeyUp={this.handleLoginKeyUp}
+                            value={this.state.fundingGoal}
                             onChange={this.changeHandler}
                             // onKeyUp={this.update}
                             // prefix={<Icon type="dollar" style={{ fontSize: 16, color: 'white' }} />}
@@ -166,26 +178,29 @@ class NormalLoginForm extends React.Component {
                     <div className="col-md-6 mt-3">
                       <Popover content="More markup, more chance of quicker funding!">
                         <label style={{ color: "white", fontSize: '16px' }} for="fund-token" class="" title="Initial Fund Tokens">
-                          Initial Fund Tokens
+                          Initial Fund Tokens:
                         </label>
                       </Popover>
-                      <Form.Item>
+                        <input name="initialtoken" type='text' value={this.state.initialFundToken.toString()} />
+                      {/* <Form.Item>
                         {getFieldDecorator('fund-token', {
                           rules: [
                             { required: false, message: 'Please enter your Initial Fund Tokens!' },
                           ],
                           value: { fund },
                         })(
+                          <span>{this.state.initialFundToken.toString()} </span>
                           <Input
-                            name="fund"
-                            id="field2"
+                            name="initialFundToken"
+                            id="initialFundToken"
                             disabled={true}
+                            value={this.state.initialFundToken}
                             onChange={this.changeHandler}
                             prefix={<Icon type="dollar" style={{ fontSize: 16, color: 'white' }} />}
                             type="number"
                           />
                         )}
-                      </Form.Item>
+                      </Form.Item> */}
                     </div>
                     <div className="col-md-6">
                       <Form.Item label="Business website">
@@ -208,7 +223,7 @@ class NormalLoginForm extends React.Component {
                       <label style={{ color: "white", fontSize: '16px' }} for="term-contract" class="" title="Term of contracts">
                       Term of contracts
                       </label> <br />
-                      <Select defaultValue="1 month">
+                      <Select defaultValue="1 month" name="contractterms">
                         <option value="2 months">2 month</option>
                         <option value="3 months">3 month</option>
                         <option value="6 months">6 month</option>
@@ -229,10 +244,10 @@ class NormalLoginForm extends React.Component {
                 </div>
                 {/* <div className="offset-md-1" /> */}
                 <div className="col-md-6">
-                  <div className="col-12 grid-margin mb-5 mt-3">
+                  {/* <div className="col-12 grid-margin mb-5 mt-3">
                     <h4 className="text-white">Currency Converter Calculator</h4>
-                    <coin-ponent dark-mode border-radius="10" decimals="4"></coin-ponent>
-                  </div>
+                    <coingecko-coin-converter-widget  coin-id="bedrock" currency="usd" background-color="#191c1b" font-color="#ffffff" locale="en"></coingecko-coin-converter-widget>
+                  </div> */}
                   <div className="row">
                     <div className="col-md-6 mt-3">
                       <Form.Item name="thumbnail" valuePropName="fileList1" noStyle>
@@ -269,6 +284,10 @@ class NormalLoginForm extends React.Component {
                 <h4>Transfer Rock tokens</h4>
                 <Transfer />
             </div>
+            {/* <div className="col-md-6 text-center">
+                <h4>Bedrock/USD</h4>
+                <Price />
+            </div> */}
           </div>
           
 

@@ -31,8 +31,8 @@ class AppSidenav extends React.Component {
             'bg-warning': ['15', '25', '35'].indexOf(colorOption) >= 0,
             'bg-danger': ['16', '26', '36'].indexOf(colorOption) >= 0 })}
         >
-          <Logo />
-          <a href="#/" className="brand">{APPCONFIG.brand}</a>
+          {/* <Logo /> */}
+          <a href="#/" className="brand"><img width="150" src="/logo_with_bedrock.png" alt="logo" /></a>
         </section>
 
         <div className="sidenav-content" ref="sidenavContent">

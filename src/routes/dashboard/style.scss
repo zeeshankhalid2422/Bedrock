@@ -116,6 +116,37 @@ tr, th {
     }
 }
 
+.funding {
+    .total {
+        span {
+            font-size: 12px;
+        }
+        h4 {
+            font-weight: 600;
+            font-size: 28px;
+        }
+    } 
+    .detail {
+        p {
+            font-size: 12px;
+            margin: 0;
+        }
+        h4 {
+            font-weight: 600;
+            font-size: 28px;
+            margin: 0;
+        }
+        span {
+            font-size: 10px;
+        }
+        .vl {
+            border-left: 1px solid #f7fff740;
+            height: 130px;
+            text-align: center;
+        }
+    }
+}
+
 .ant-progress-text {
     color: white;
 }

@@ -43,31 +43,31 @@ const NormalLoginForm=(props)=> {
     
   // }
 
-  const TransferWeth = () => {
-    const {fetch, error, isFetching} = useWeb3Transfer({
-      amount: Moralis.Units.Token(20, 18),
-      receiver: "0x570518Df163057c134C8d7aef02E4D70b6E5A6Fa",
-      type: "erc20",
-      contractAddress: "0xc3387e4285e9f80a7cfdf02b4ac6cdf2476a528a",
-    });
+  // const TransferWeth = () => {
+  //   const {fetch, error, isFetching} = useWeb3Transfer({
+  //     amount: Moralis.Units.Token(20, 18),
+  //     receiver: "0x570518Df163057c134C8d7aef02E4D70b6E5A6Fa",
+  //     type: "erc20",
+  //     contractAddress: "0xc3387e4285e9f80a7cfdf02b4ac6cdf2476a528a",
+  //   });
   
-    return (
+  //   return (
       
-      <FormItem>
-      <Button
-        style={{fontSize: '1.0rem'}}
-        type="primary"
-        htmlType="submit"
-        onClick={() => fetch()}
-        className="btn-cta btn-block"
-        id="submit"
-        disabled={isFetching}
-      >
-        Transfer
-      </Button>
-    </FormItem>)
+  //     <FormItem>
+  //     <Button
+  //       style={{fontSize: '1.0rem'}}
+  //       type="primary"
+  //       htmlType="submit"
+  //       onClick={() => fetch()}
+  //       className="btn-cta btn-block"
+  //       id="submit"
+  //       disabled={isFetching}
+  //     >
+  //       Transfer
+  //     </Button>
+  //   </FormItem>)
     
-  }
+  // }
 
   const TokenPrice = async() => {
    //Get token price on PancakeSwap v2 BSC
@@ -179,6 +179,7 @@ const NormalLoginForm=(props)=> {
           </Button>
         </FormItem>
         
+        <LogoutButton />
 
         {/* {/ <LogoutButton /> /}
 

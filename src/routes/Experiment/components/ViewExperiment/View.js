@@ -7,10 +7,14 @@ const columns = [
   { title: 'ID', dataIndex: 'id', key: 'key'},
   { title: 'Experiment Name', dataIndex: 'expname', key: 'age'},
   { title: 'Description', dataIndex: 'desc', key: '1' },
-  { title: 'Funding Goal', dataIndex: 'fund', key: '2' },
+  { title: 'Raise Goal', dataIndex: 'fund', key: '2' },
   { title: 'Goal Date', dataIndex: 'date', key: '3' },
   { title: 'Markup', dataIndex: 'markup', key: '4' },
-  { title: 'Initial Funding Token', dataIndex: 'token', key: '5' },
+  { title: 'Contract Term', dataIndex: 'markup', key: '5' },
+  { title: 'Initial Fund Tokens', dataIndex: 'markup', key: '6' },
+  { title: 'Funding Amount', dataIndex: 'token', key: '7' },
+  { title: 'Funding Amount %', dataIndex: 'markup', key: '8' },
+  { title: 'Contract term left', dataIndex: 'markup', key: '9' },
   { title: 'Status', dataIndex: 'status', key: '5', fixed: 'right', },
 ];
 

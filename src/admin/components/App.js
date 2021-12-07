@@ -14,7 +14,7 @@ import "styles/vendors.scss"
 
 
 let AsyncAppLayout = loadable({
-  loader: () => import('components/Layout/AppLayout/'),
+  loader: () => import('./Layout/AppLayout'),
   loading: LoadingComponent
 })
 let AsyncException = loadable({
@@ -32,7 +32,7 @@ class App extends React.Component {
     const { match, location } = this.props;
     const isRoot = location.pathname === '/' ? true : false;
     if (isRoot) {
-      return ( <Redirect to={'/app/admin/dashboard'}/> );
+      return ( <Redirect to={'/admin/dash'}/> );
     }
 
     return (

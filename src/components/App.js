@@ -21,6 +21,10 @@ let AsyncAdminLayout = loadable({
   loader: () => import('../admin/components/Layout/AppLayout'),
   loading: LoadingComponent
 })
+let AsyncuserLayout = loadable({
+  loader: () => import('../user/components/Layout/AppLayout'),
+  loading: LoadingComponent
+})
 let AsyncException = loadable({
   loader: () => import('routes/exception/'),
   loading: LoadingComponent
@@ -43,6 +47,7 @@ class App extends React.Component {
       <div id="app">
         <Route path={`${match.url}app`} component={AsyncAppLayout} />
         <Route path={`${match.url}admin`} component={AsyncAdminLayout} />
+        <Route path={`${match.url}users`} component={AsyncuserLayout} />
         <Route path={`${match.url}exception`} component={AsyncException} />
         <Route path={`${match.url}user`} component={AsyncAccount} />
       </div>

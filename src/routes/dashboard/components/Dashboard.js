@@ -1,12 +1,12 @@
 import React from 'react';
 import QueueAnim from 'rc-queue-anim';
-import { Icon, Table, Avatar, Progress  } from 'antd';
+import { Icon, Table, Avatar, Progress } from 'antd';
 import 'echarts/theme/macarons';
 import CHARTCONFIG from 'constants/chartConfig';
 import ReactEcharts from 'echarts-for-react';
-import DEMO from 'constants/demoData';
 import '../style.scss';
 import Slider from "react-slick";
+
 
 const columns = [
   { title: 'Transaction Hash', width: 10, dataIndex: 'key', key: 'name' },
@@ -67,6 +67,8 @@ const settings = {
   slidesToScroll: 1
 };
 
+
+// Graphs
 
 let bar1 = {};
 
@@ -157,6 +159,54 @@ bar1.option = {
     //     ]
     //   }
     // }
+  ]
+};
+
+let bar2 = {};
+
+bar2.option = {
+  tooltip: {
+    trigger: 'item'
+  },
+  legend: {
+    show: false,
+    top: '0%',
+    left: 'center'
+  },
+  series: [
+    {
+      name: 'Funding',
+      type: 'pie',
+      radius: ['50%', '90%'],
+      avoidLabelOverlap: false,
+      itemStyle: {
+        borderRadius: 10,
+        borderColor: '#fff',
+        borderWidth: 0
+      },
+      label: {
+        show: false,
+        position: 'center'
+      },
+      emphasis: {
+        label: {
+          show: true,
+          fontSize: '12',
+          fontWeight: 'bold'
+        }
+      },
+      labelLine: {
+        show: false
+      },
+      data: [
+        { value: 1048, name: 'Total' },
+        { value: 735, name: 'Other1' },
+        { value: 580, name: 'Other2' },
+        { value: 484, name: 'Other3' },
+        { value: 300, name: 'Other4' },
+        { value: 300, name: 'Other5' }
+      ]
+    }
   ]
 };
 
@@ -257,18 +307,59 @@ const dash = () => (
               </div>
             </div>
           </div>
-          <div className="row">
+          <div className="row funding">
             <div className="col-md-12">
-              <div style={{background: "#191c1b", padding: "25px", borderRadius: "10px"}}>
+              <div style={{ background: "#191c1b", padding: "25px", borderRadius: "10px" }}>
                 <h4>Funding from BackersCamp</h4>
-                <hr style={{background: "#ffffff33"}} />
+                <hr style={{ background: "#ffffff33" }} />
 
                 <div className="row">
-                  <div className="col-md-6">
-                      Hello
+                  <div className="col-md-4">
+                    <div className="total">
+                      <span>TOTAL</span>
+                      <h4>24.2K</h4>
+                    </div>
+
+                    <div className="row mt-5 detail">
+                      <div className="col-md-4">
+                        <p>ADDS</p>
+                        <h4>$12.4K</h4>
+                        <span>24%</span>
+                      </div>
+                      <div className="col-md-4" style={{ display: "flex", justifyContent: "center" }}>
+                        <div class="vl"></div>
+                      </div>
+                      <div className="col-md-4">
+                        <p>ANALYTICS</p>
+                        <h4>$300K</h4>
+                        <span>12%</span>
+                      </div>
+                    </div>
+
+                    <div className="row mt-5 detail">
+                      <div className="col-md-4">
+                        <p>OTHER</p>
+                        <h4>8.2K</h4>
+                        <span>16%</span>
+                      </div>
+                      <div className="col-md-4" style={{ display: "flex", justifyContent: "center" }}>
+                        <div class="vl"></div>
+                      </div>
+                      <div className="col-md-4">
+                        <p>OTHER</p>
+                        <h4>8.2K</h4>
+                        <span>16%</span>
+                      </div>
+                    </div>
+
                   </div>
-                  <div className="col-md-6">
-                      Hello
+                  <div className="col-md-8">
+                  <div className="box box-default mb-4">
+                    {/* <div className="box-header">ATC Live Statistics</div> */}
+                    <div className="box-body">
+                      <ReactEcharts option={bar2.option} />
+                    </div>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -297,9 +388,9 @@ const dash = () => (
           </div> */}
 
 
-          <div className="card mb-4" style={{background: "#191c1b"}}>
+          <div className="card mb-4" style={{ background: "#191c1b" }}>
             <img style={{ maxHeight: "300px", width: "100%" }} src="assets/sneakxenergy.png" alt="sneak" />
-            <div className ="card-body">
+            <div className="card-body">
               <h4>Sneak X Energy</h4>
               <p> The future of Energy Drinks </p>
               <Progress percent={80} />
@@ -330,7 +421,7 @@ const dash = () => (
           <div className="row mb-4">
             <div className="col-12 grid-margin">
               <h4>Currency Converter Calculator</h4>
-              <coin-ponent dark-mode border-radius="10" decimals="4"></coin-ponent>
+              <coingecko-coin-converter-widget  coin-id="bedrock" currency="usd" background-color="#191c1b" font-color="#ffffff" locale="en"></coingecko-coin-converter-widget>
             </div>
           </div>
           <div className="row mb-4">
