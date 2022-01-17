@@ -7,24 +7,21 @@ import DEMO from 'constants/demoData';
 import { toggleOffCanvasMobileNav } from 'actions/settingsActions';
 import { EXPERIMENT } from '../../../constants/uiComponents';
 
-
 const SubMenu = Menu.SubMenu;
 
 class AppMenu extends React.Component {
-
   // list for AccordionNav
-  rootMenuItemKeys= [ // without submenu
-    '/admin/dash'
-  ]
-  rootSubmenuKeys = [
-    '/app/card'
+  rootMenuItemKeys = [
+    // without submenu
+    '/admin/dash',
   ];
+  rootSubmenuKeys = ['/app/card'];
 
   state = {
     openKeys: ['/admin/dash'],
   };
 
-  onOpenChange = (openKeys) => {
+  onOpenChange = openKeys => {
     // AccordionNav
     // console.log(openKeys)
     const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
@@ -35,47 +32,50 @@ class AppMenu extends React.Component {
         openKeys: latestOpenKey ? [latestOpenKey] : [],
       });
     }
-  }
+  };
 
-  onMenuItemClick = (item) => {
+  onMenuItemClick = item => {
     // AccordionNav
     const itemKey = item.key;
-    if(this.rootMenuItemKeys.indexOf(itemKey) >= 0) {
+    if (this.rootMenuItemKeys.indexOf(itemKey) >= 0) {
       this.setState({ openKeys: [itemKey] });
     }
 
-    // 
+    //
     const { isMobileNav } = this.props;
     if (isMobileNav) {
       this.closeMobileSidenav();
     }
-  }
+  };
 
   closeMobileSidenav = () => {
     if (APPCONFIG.AutoCloseMobileNav) {
       const { handleToggleOffCanvasMobileNav } = this.props;
       handleToggleOffCanvasMobileNav(true);
     }
-  }
+  };
 
-  // 
+  //
   getSubMenuOrItem = item => {
     if (item.children && item.children.some(child => child.name)) {
       const childrenItems = this.getNavMenuItems(item.children);
       // hide submenu if there's no children items
       if (childrenItems && childrenItems.length > 0) {
         return (
-          <SubMenu
-            title={item.name}
-            key={item.path}
-          >
+          <SubMenu title={item.name} key={item.path}>
             {childrenItems}
           </SubMenu>
         );
       }
       return null;
     } else {
-      return <Menu.Item key={item.path}><Link to={item.path}><span>{item.menuName || item.name}</span></Link></Menu.Item>;
+      return (
+        <Menu.Item key={item.path}>
+          <Link to={item.path}>
+            <span>{item.menuName || item.name}</span>
+          </Link>
+        </Menu.Item>
+      );
     }
   };
 
@@ -91,23 +91,23 @@ class AppMenu extends React.Component {
         return ItemDom;
       })
       .filter(item => item);
-  }
-
+  };
 
   render() {
     const { collapsedNav, colorOption, location } = this.props;
     // const mode = collapsedNav ? 'vertical' : 'inline';
-    const menuTheme = ['31', '32', '33', '34', '35', '36'].indexOf(colorOption) >= 0 ? 'light' : 'dark';
+    const menuTheme =
+      ['31', '32', '33', '34', '35', '36'].indexOf(colorOption) >= 0 ? 'light' : 'dark';
     const currentPathname = location.pathname;
 
     const menuProps = collapsedNav
       ? {}
       : {
-          openKeys: this.state.openKeys
+          openKeys: this.state.openKeys,
         };
 
     return (
-      <Menu 
+      <Menu
         theme={menuTheme}
         mode="inline"
         inlineCollapsed={collapsedNav}
@@ -124,32 +124,33 @@ class AppMenu extends React.Component {
         </Menu.Item>
         <SubMenu
           key="/admin/experiment"
-          title={<span><Icon type="credit-card" /><span className="nav-text">KYC</span></span>}
+          title={
+            <span>
+              <Icon type="credit-card" />
+              <span className="nav-text">Experiment</span>
+            </span>
+          }
         >
-          { this.getNavMenuItems(EXPERIMENT) }
+          {this.getNavMenuItems(EXPERIMENT)}
         </SubMenu>
-        
       </Menu>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => {
   // console.log(state);
-  return ({
+  return {
     collapsedNav: state.settings.collapsedNav,
     colorOption: state.settings.colorOption,
-    location: state.routing.location
-  })
+    location: state.routing.location,
+  };
 };
 
 const mapDispatchToProps = dispatch => ({
-  handleToggleOffCanvasMobileNav: (isOffCanvasMobileNav) => {
-    dispatch( toggleOffCanvasMobileNav(isOffCanvasMobileNav) );
-  }
+  handleToggleOffCanvasMobileNav: isOffCanvasMobileNav => {
+    dispatch(toggleOffCanvasMobileNav(isOffCanvasMobileNav));
+  },
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(AppMenu);
+export default connect(mapStateToProps, mapDispatchToProps)(AppMenu);

@@ -52,7 +52,7 @@ class NormalLoginForm extends React.Component {
   render() {
     const { getFieldDecorator } = this.props.form;
 
-    const { name, description, raise_goal, goal_date, interest, files, initial_fund } = this.state;
+    const { name, description, raiseGoal, goalDate, interest, files, initialFund } = this.state;
 
     return (
       <section className="form-v1-container">
@@ -84,10 +84,10 @@ class NormalLoginForm extends React.Component {
                     <Form.Item label="Funding Goal">
                       {getFieldDecorator('funding-goal', {
                         rules: [{ required: true, message: 'Please enter your Funding Goal!' }],
-                        value: { raise_goal },
+                        value: { raiseGoal },
                       })(
                         <Input
-                          name="raise_goal"
+                          name="raiseGoal"
                           onChange={this.changeHandler}
                           prefix={<Icon type="dollar" style={{ fontSize: 16, color: 'white' }} />}
                           type="number"
@@ -100,10 +100,10 @@ class NormalLoginForm extends React.Component {
                     <Form.Item label="Goal Date">
                       {getFieldDecorator('goal-date', {
                         rules: [{ required: true, message: 'Please enter your Goal Date!' }],
-                        value: { goal_date },
+                        value: { goalDate },
                       })(
                         <Input
-                          name="goal_date"
+                          name="goalDate"
                           onChange={this.changeHandler}
                           prefix={<Icon type="calendar" style={{ fontSize: 16, color: 'white' }} />}
                           type="date"
@@ -135,10 +135,10 @@ class NormalLoginForm extends React.Component {
                         rules: [
                           { required: true, message: 'Please enter your Initial Fund Tokens!' },
                         ],
-                        value: { initial_fund },
+                        value: { initialFund },
                       })(
                         <Input
-                          name="initial_fund"
+                          name="initialFund"
                           onChange={this.changeHandler}
                           prefix={<Icon type="dollar" style={{ fontSize: 16, color: 'white' }} />}
                           type="number"

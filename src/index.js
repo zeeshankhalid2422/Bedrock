@@ -13,8 +13,8 @@ import { MoralisProvider } from "react-moralis";
 
 const store = configureStore();
 
-const moralisAppId = "ehzCQbqTnft2zNN7GoY9PmBNNaSHOsjOJb8bVx2V";
-const moralisServerURL = "https://geg6yousp7hb.usemoralis.com:2053/server";
+const moralisAppId = "xqAjwMlMpNQkbRCbb99mUORaFK2b4xAjKsSEGJp3";
+const moralisServerURL = "https://arqj3qic8iv7.usemoralis.com:2053/server";
 
 
 render(

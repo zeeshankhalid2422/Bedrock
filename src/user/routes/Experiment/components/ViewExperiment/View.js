@@ -41,13 +41,12 @@ const Article = () => {
         <thead>
           <tr>
             <th scope="col">ID</th>
-            <th scope="col">Experiment Name</th>
-            <th scope="col">Description</th>
+            <th scope="col">Name</th>
             <th scope="col">Raise Goal</th>
             <th scope="col">Goal Date</th>
-            <th scope="col">Markup</th>
+            <th scope="col">Markup %</th>
             <th scope="col">Contract Term</th>
-            <th scope="col">Initial Fund Tokens</th>
+            <th scope="col">Initial Rock Tokens submitted</th>
             <th scope="col">Funding Amount</th>
             <th scope="col">Funding Amount %</th>
             <th scope="col">Contract term left</th>
@@ -59,33 +58,31 @@ const Article = () => {
             <td>1</td>
             <td>Zeeshan</td>
             <td>Testing</td>
-            <td>50</td>
-            <td>01/13/2022</td>
-            <td>10</td>
-            <td>178.57142857142856</td>
-            <td>www.website.com</td>
-            <td>1 month</td>
-            <td>50</td>
-            <td>1 month</td>
+            <td>5000</td>
+            <td>5000</td>
+            <td>5000</td>
+            <td>5000</td>
+            <td>5000</td>
+            <td>5000</td>
+            <td>5000</td>
             <td style={{ display: 'flex' }}>
-              <a className="btn btn-success mr-3">Start Project</a>{' '}
+              <a className="btn btn-success mr-3">Approve Project</a>{' '}
               {/* <a className="btn btn-danger">Deny</a>{' '} */}
             </td>
           </tr>
           <tr>
             <td>2</td>
-            <td>Waqas</td>
+            <td>Zeeshan</td>
             <td>Testing</td>
-            <td>25</td>
-            <td>01/13/2022</td>
-            <td>10</td>
-            <td>89.28571428571428</td>
-            <td>www.website.com</td>
-            <td>1 month</td>
-            <td>50</td>
-            <td>1 month</td>
+            <td>5000</td>
+            <td>5000</td>
+            <td>5000</td>
+            <td>5000</td>
+            <td>5000</td>
+            <td>5000</td>
+            <td>5000</td>
             <td style={{ display: 'flex' }}>
-              <a className="btn btn-success mr-3">Start Project</a>{' '}
+              <a className="btn btn-success mr-3">Approve Project</a>{' '}
               {/* <a className="btn btn-danger">Deny</a>{' '} */}
             </td>
           </tr>
